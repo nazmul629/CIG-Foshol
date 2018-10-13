@@ -1,24 +1,28 @@
 {% extends 'base.html' %}
 {% block contain %}
 
-<div class="card border-light col-9">
+<div class="card border-light col-12">
       <div class="card-body">
 <div class="card-deck row ">
   <div class="card border-warning col-6">
                   <div class="card-body">
-              <div>
-                <img class="card-img-top" src="img/n.jpg"style="  width:170px;"alt="Card image cap">
-              </div>
-              <div class="card-header bg-dark text-center text-light mt-2">
-                সাদবরন সম্পাদক
-              </div>
-              <div class="bg-light m-2 ">
-                <h4>
-                  <strong class="mt-4"> বকুল ইসলাম</strong></h4>
-                </div>
+               {%for f in details%}
+            
+              <div class="float-center">
+              <img src="{{f.photo.url}}"src="img/n.jpg" style="  width:220px;" alt="Card image cap">
+            </div>
 
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">অারও পড়ুন</a>
+            <div class="card-header bg-dark text-light text-center mt-2">
+              <strong class="mt-2">{{f.designation}}</strong>
+            </div>
+            
+            <h4 class="card-header bg-light text-center mt-2 border-light">
+                <strong class="mt-2">{{f.name}}</strong>
+            </h4>
+
+            {% endfor %}
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">অারও পড়ুন</a>
             </div>
           </div>
 
